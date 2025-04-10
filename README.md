@@ -32,7 +32,8 @@
 
 > _(Add real screenshots or GIFs of your UI for best impact)_
 
-![App Preview](./screenshots/preview.png)
+![image](https://github.com/user-attachments/assets/4d477b4e-7b28-40b5-9935-93b5c9bb684d)
+
 
 ---
 
