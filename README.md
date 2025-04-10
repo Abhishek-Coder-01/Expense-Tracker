@@ -12,11 +12,7 @@
 </p>
 
 ---
-
-## 🌟 Live Demo
-
-🚀 [Click here to view live](https://your-live-demo-link.vercel.app) (replace with your actual link)
-
+## 🔴 [Live Demo](https://abhishek-coder-01.github.io/Expense-Tracker/)
 ---
 
 ## ✨ UI Design Overview
