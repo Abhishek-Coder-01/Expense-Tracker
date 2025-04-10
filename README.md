@@ -30,7 +30,6 @@
 
 ## 📸 Preview
 
-> _(Add real screenshots or GIFs of your UI for best impact)_
 
 ![image](https://github.com/user-attachments/assets/4d477b4e-7b28-40b5-9935-93b5c9bb684d)
 
@@ -51,7 +50,7 @@
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/expense-tracker.git
+git clone https://github.com/Abhishek-coder-01/expense-tracker.git
 
 # Navigate into folder
 cd expense-tracker
