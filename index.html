@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Expense Tracker</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -14,41 +14,42 @@
     }
 
     .popup-menu {
-      opacity: 0;
-      transform: scale(0.95);
-      transition: all 0.2s ease;
-    }
-
-    .popup-menu {
       opacity: 1;
       transform: scale(1);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
     }
-
-  
   </style>
+
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md min-h-[500px] sm:min-h-[auto]" >
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center min-h-screen  dark:from-gray-900  dark:to-gray-800 transition-all duration-300 p-[6px] ">
+  <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
     <h1 class="text-3xl font-bold text-center mb-6 text-blue-700">💸 Expense Tracker</h1>
 
     <div class="mb-4">
-      <label class="block font-medium mb-1 font-bold " for="item-name">Item Name:</label>
+      <label class="block font-semibold mb-1" for="item-name">Item Name:</label>
       <input id="item-name" type="text" placeholder="Enter item name"
         class="w-full p-2 border border-gray-300 rounded-md outline-none focus:border-blue-500" />
     </div>
 
     <div class="mb-6">
-      <label class="block font-medium mb-1" for="item-amount">Item Amount:</label>
+      <label class="block font-semibold mb-1" for="item-amount">Item Amount:</label>
       <input id="item-amount" type="number" placeholder="Enter item amount"
         class="w-full p-2 border border-gray-300 rounded-md outline-none focus:border-blue-500" />
     </div>
 
     <div class="flex gap-4 mb-4">
       <button onclick="addItem()"
-        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition font-bold">Add Item</button>
+        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition font-bold">
+        <i class="fa-solid fa-plus mr-1"></i> Add Item
+      </button>
       <button onclick="clearAll()"
-        class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition font-bold">Clear All</button>
+        class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition font-bold">
+        <i class="fa-solid fa-trash mr-1"></i> Clear All
+      </button>
     </div>
 
     <div id="item-list" class="space-y-2 max-h-64 overflow-y-auto pr-1 mb-6"></div>
@@ -58,6 +59,8 @@
       <div class="text-3xl font-bold text-green-600">₹<span id="total">0.00</span></div>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
+
 </html>
