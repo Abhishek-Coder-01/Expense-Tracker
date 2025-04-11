@@ -28,7 +28,7 @@
   </style>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center min-h-screen">
   <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md min-h-[500px] sm:min-h-[auto]" >
     <h1 class="text-3xl font-bold text-center mb-6 text-blue-700">💸 Expense Tracker</h1>
 
@@ -46,9 +46,9 @@
 
     <div class="flex gap-4 mb-4">
       <button onclick="addItem()"
-        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition font-bold">Add Item</button>
+        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition font-bold"><i class="fa-solid fa-plus mr-1"></i> Add Item</button>
       <button onclick="clearAll()"
-        class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition font-bold">Clear All</button>
+        class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition font-bold"> <i class="fa-solid fa-trash mr-1"></i> Clear All</button>
     </div>
 
     <div id="item-list" class="space-y-2 max-h-64 overflow-y-auto pr-1 mb-6"></div>
