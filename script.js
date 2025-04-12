@@ -3,6 +3,8 @@ const totalEl = document.getElementById('total');
 let total = 0;
 let items = [];
 
+let toastBox = document.getElementById('toastBox');
+
 window.onload = () => {
   const stored = JSON.parse(localStorage.getItem('expenseItems')) || [];
   items = stored;
@@ -13,12 +15,25 @@ window.onload = () => {
   totalEl.textContent = total.toFixed(2);
 };
 
+function showToast(msg, type) {
+  let toast = document.createElement('div');
+  toast.classList.add('toast');
+  toast.classList.add(type);
+  toast.innerHTML = msg;
+  toastBox.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 5000);
+}
+
 function addItem() {
   const name = document.getElementById('item-name').value.trim();
   const amount = parseFloat(document.getElementById('item-amount').value);
 
   if (!name || isNaN(amount)) {
-    alert('Please enter a valid name and amount');
+    showToast('<i class="fa-solid fa-circle-xmark"></i> Please enter a valid name and amount', 'error');
+
     return;
   }
 
@@ -129,6 +144,7 @@ function clearAll() {
   total = 0;
   totalEl.textContent = total.toFixed(2);
   localStorage.removeItem('expenseItems');
+  showToast('<i class="fa-solid fa-check-circle"></i> All items cleared successfully!', 'success');
 }
 
 function updateLocalStorage() {
