@@ -21,11 +21,101 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: all 0.2s ease;
     }
+    .toast::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: green;
+    animation: anim 5s linear forwards;
+    }
+    @keyframes move {
+    100%{
+        transform: translateX(0);
+    }
+    
+}
+.toast.error::after{
+    background-color: red;
+}
+@keyframes anim {
+    100%{
+       width: 0;
+    }
+    
+}
+
+
+
+.toast{
+    width: 400px ;
+    height: 80px ;
+    background-color: #fff;
+    font-weight: 500; 
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: move 0.5s linear forwards ;
+    border-radius: 8px;
+}
+@keyframes move {
+    100%{
+        transform: translateX(0);
+    }
+    
+}
+.toast i{
+    margin: 0 20px;
+    font-size: 35px;
+    color: green;
+}
+
+.toast.error i {
+  color: red;
+
+}
+
+.toast::after{
+
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: green;
+    animation: anim 5s linear forwards;
+}
+.toast.error::after{
+    background-color: red;
+ 
+}
+
+@keyframes anim {
+    100%{
+       width: 0;
+    }
+    
+}
+@media (max-width: 450px) {
+    .toast{
+    width: 300px ;
+    height: 70px ;
+    }
+}
+
+
   </style>
 
 </head>
 
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center min-h-screen  dark:from-gray-900  dark:to-gray-800 transition-all duration-300 p-[6px] ">
+
   <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
     <h1 class="text-3xl font-bold text-center mb-6 text-blue-700">💸 Expense Tracker</h1>
 
@@ -59,6 +149,11 @@
       <div class="text-3xl font-bold text-green-600">₹<span id="total">0.00</span></div>
     </div>
   </div>
+ 
+  <div id="toastBox"
+  class="absolute md:bottom-[30px] md:right-[30px] bottom-[20px] right-[10px]  flex flex-col overflow-hidden p-4">
+</div>
+
 
   <script src="script.js"></script>
 </body>
